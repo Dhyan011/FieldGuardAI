@@ -12,6 +12,7 @@ import AttendanceLogScreen from './screens/AttendanceLogScreen';
 import SyncStatusScreen from './screens/SyncStatusScreen';
 import AdminDashboardScreen from './screens/AdminDashboardScreen';
 import SettingsScreen from './screens/SettingsScreen';
+import { syncService } from './services/SyncService';
 
 export type RootStackParamList = {
   Splash: undefined;
@@ -27,6 +28,11 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const App = () => {
+  React.useEffect(() => {
+    syncService.startAutoSync();
+    return () => syncService.stopAutoSync();
+  }, []);
+
   return (
     <SafeAreaProvider>
       <NavigationContainer>

@@ -19,12 +19,11 @@ const HomeScreen = () => {
 
   const loadStats = async () => {
     try {
-      const workers = await dbService.getAllWorkers();
-      const pending = await dbService.getPendingSyncRecords();
+      const dbStats = await dbService.getStats();
       setStats({
-        enrolled: workers.length,
-        today: Math.floor(Math.random() * 50), // Fallback mock for today
-        pending: pending.length,
+        enrolled: dbStats.total_enrolled,
+        today: dbStats.today_attendance,
+        pending: dbStats.pending_sync,
       });
     } catch (e) {
       console.log(e);
