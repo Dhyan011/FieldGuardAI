@@ -1,0 +1,12 @@
+{
+  "enabled": true,
+  "prefabPath": "/Users/dhyanpatel/.gradle/caches/modules-2/files-2.1/com.google.prefab/cli/2.0.0/f2702b5ca13df54e3ca92f29d6b403fb6285d8df/cli-2.0.0-all.jar",
+  "packages": [
+    "/Users/dhyanpatel/Downloads/FieldGuardAI/node_modules/react-native-vision-camera/android/build/intermediates/prefab_package/debug/prefab",
+    "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab",
+    "/Users/dhyanpatel/.gradle/caches/transforms-4/85cc4120626eb1015f9177086ccacf97/transformed/fbjni-0.6.0/prefab",
+    "/Users/dhyanpatel/.gradle/caches/transforms-4/6cd604b93b28e77f135c352f720cc772/transformed/hermes-android-0.74.1-debug/prefab",
+    "/Users/dhyanpatel/Downloads/FieldGuardAI/node_modules/@shopify/react-native-skia/android/build/intermediates/prefab_package/debug/prefab",
+    "/Users/dhyanpatel/Downloads/FieldGuardAI/node_modules/react-native-reanimated/android/build/intermediates/prefab_package/debug/prefab"
+  ]
+}

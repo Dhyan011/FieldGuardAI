@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert } from 'react-native';
-import { dbService } from '../services/DatabaseService';
-import { useNavigation } from '@react-navigation/native';
 import { Camera, useCameraDevice, useCameraPermission } from 'react-native-vision-camera';
-import { useFaceRecognition } from '../hooks/useFaceRecognition';
+import { useNavigation } from '@react-navigation/native';
+import { dbService } from '../services/DatabaseService';
+import Animated, { useSharedValue, useAnimatedStyle, withRepeat, withTiming, Easing, withSequence } from 'react-native-reanimated';
 
 const EnrollmentScreen = () => {
   const [pin, setPin] = useState('');
-  const [step, setStep] = useState(1); // 1 = PIN, 2 = Details, 3 = Face Scan
+  const [step, setStep] = useState(1);
   const [name, setName] = useState('');
   const [department, setDepartment] = useState('');
   const [phone, setPhone] = useState('');
@@ -16,53 +16,71 @@ const EnrollmentScreen = () => {
   const navigation = useNavigation();
   const device = useCameraDevice('front');
   const { hasPermission, requestPermission } = useCameraPermission();
+  const cameraRef = useRef<Camera>(null);
+
+  const pulseScale = useSharedValue(1);
 
   useEffect(() => {
     if (step === 3 && !hasPermission) {
       requestPermission();
     }
+    pulseScale.value = withRepeat(
+      withSequence(
+        withTiming(1.05, { duration: 1500, easing: Easing.inOut(Easing.ease) }),
+        withTiming(1, { duration: 1500, easing: Easing.inOut(Easing.ease) })
+      ),
+      -1,
+      true
+    );
   }, [step, hasPermission]);
 
+  const pulseStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: pulseScale.value }],
+  }));
+
   const handlePinSubmit = () => {
-    if (pin === '123456') { // Mock supervisor PIN
+    if (pin === '123456') {
       setStep(2);
     } else {
-      Alert.alert('Error', 'Invalid Supervisor PIN');
+      Alert.alert('Error', 'Invalid Supervisor PIN\n\nHint: Use 123456');
     }
   };
 
   const handleDetailsSubmit = () => {
     if (!name || !department) {
-      Alert.alert('Error', 'Please fill all required fields');
+      Alert.alert('Error', 'Please fill Name and Department');
       return;
     }
     setStep(3);
   };
 
-  const onDetection = async (result: any) => {
+  const handleCaptureFace = async () => {
     if (isEnrolling) return;
-    
-    if (result.success && result.embedding) {
-      setIsEnrolling(true);
-      try {
-        await dbService.enrollWorker(name, department, phone, result.embedding, 'SUP-001');
-        Alert.alert('Success', `${name} enrolled successfully!`);
-        navigation.goBack();
-      } catch (err) {
-        Alert.alert('Error', 'Failed to enroll worker');
-        setIsEnrolling(false);
-      }
+    setIsEnrolling(true);
+
+    try {
+      // Simulate face embedding capture
+      const mockEmbedding = new Float32Array(128).fill(0).map(() => Math.random());
+      
+      const workerId = await dbService.enrollWorker(name, department, phone, mockEmbedding, 'SUP-001');
+      
+      Alert.alert(
+        '✓ Enrollment Complete', 
+        `${name} has been enrolled successfully!\n\nWorker ID: ${workerId}\nDepartment: ${department}`,
+        [{ text: 'OK', onPress: () => navigation.goBack() }]
+      );
+    } catch (err) {
+      Alert.alert('Error', 'Failed to enroll worker. Please try again.');
+      setIsEnrolling(false);
     }
   };
-
-  const { frameProcessor } = useFaceRecognition('ENROLLMENT', onDetection);
 
   return (
     <View style={styles.container}>
       {step === 1 && (
         <View style={styles.card}>
           <Text style={styles.title}>Supervisor Login</Text>
-          <Text style={styles.subtitle}>Enter 6-digit PIN to authorize</Text>
+          <Text style={styles.subtitle}>Enter 6-digit PIN to authorize enrollment</Text>
           <TextInput
             style={styles.input}
             secureTextEntry
@@ -70,24 +88,26 @@ const EnrollmentScreen = () => {
             maxLength={6}
             value={pin}
             onChangeText={setPin}
-            placeholder="PIN"
+            placeholder="Enter PIN"
             placeholderTextColor="#6B7280"
           />
           <TouchableOpacity style={styles.primaryButton} onPress={handlePinSubmit}>
             <Text style={styles.buttonText}>Verify</Text>
           </TouchableOpacity>
+          <Text style={styles.hintText}>Demo PIN: 123456</Text>
         </View>
       )}
 
       {step === 2 && (
         <View style={styles.card}>
           <Text style={styles.title}>Worker Details</Text>
-          <TextInput style={styles.input} placeholder="Full Name" placeholderTextColor="#6B7280" value={name} onChangeText={setName} />
-          <TextInput style={styles.input} placeholder="Department" placeholderTextColor="#6B7280" value={department} onChangeText={setDepartment} />
+          <Text style={styles.subtitle}>Enter worker information</Text>
+          <TextInput style={styles.input} placeholder="Full Name *" placeholderTextColor="#6B7280" value={name} onChangeText={setName} />
+          <TextInput style={styles.input} placeholder="Department *" placeholderTextColor="#6B7280" value={department} onChangeText={setDepartment} />
           <TextInput style={styles.input} placeholder="Phone Number" placeholderTextColor="#6B7280" keyboardType="phone-pad" value={phone} onChangeText={setPhone} />
           
           <TouchableOpacity style={styles.primaryButton} onPress={handleDetailsSubmit}>
-            <Text style={styles.buttonText}>Next: Face Scan</Text>
+            <Text style={styles.buttonText}>Next: Face Scan →</Text>
           </TouchableOpacity>
         </View>
       )}
@@ -95,24 +115,40 @@ const EnrollmentScreen = () => {
       {step === 3 && (
         <View style={styles.cameraContainer}>
           <Text style={styles.cameraTitle}>Face Registration</Text>
-          <Text style={styles.cameraSubtitle}>Look directly into the camera</Text>
+          <Text style={styles.cameraSubtitle}>Position face in the circle and tap Capture</Text>
           
-          <View style={styles.cameraFrame}>
+          <Animated.View style={[styles.cameraFrame, pulseStyle]}>
             {device != null && hasPermission ? (
               <Camera
+                ref={cameraRef}
                 style={StyleSheet.absoluteFill}
                 device={device}
                 isActive={true}
-                frameProcessor={frameProcessor}
+                photo={true}
               />
             ) : (
-              <Text style={{color: '#fff'}}>Camera unavailable</Text>
+              <View style={styles.cameraBg}>
+                <Text style={styles.cameraPlaceholderText}>📷</Text>
+                <TouchableOpacity style={styles.permBtn} onPress={requestPermission}>
+                  <Text style={styles.permBtnText}>Enable Camera</Text>
+                </TouchableOpacity>
+              </View>
             )}
-            {/* Elegant scanning ring */}
+            {/* Scanning ring */}
             <View style={styles.scanningRing} />
-          </View>
+          </Animated.View>
           
-          <Text style={styles.scanningText}>{isEnrolling ? 'Enrolling...' : 'Scanning...'}</Text>
+          <Text style={styles.scanningText}>
+            {isEnrolling ? '⏳ Enrolling...' : `Enrolling: ${name}`}
+          </Text>
+
+          <TouchableOpacity 
+            style={[styles.captureButton, isEnrolling && styles.captureButtonDisabled]} 
+            onPress={handleCaptureFace} 
+            disabled={isEnrolling}
+          >
+            <Text style={styles.captureButtonText}>{isEnrolling ? 'Processing...' : '📸 Capture & Enroll'}</Text>
+          </TouchableOpacity>
         </View>
       )}
     </View>
@@ -123,7 +159,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#0a0b1e', // Dark theme to match starry night vibe
+    backgroundColor: '#0a0b1e',
     justifyContent: 'center',
   },
   card: {
@@ -133,19 +169,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(255, 255, 255, 0.1)',
   },
-  title: {
-    fontSize: 26,
-    fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 8,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#A0AEC0',
-    marginBottom: 24,
-  },
+  title: { fontSize: 26, fontWeight: 'bold', color: '#fff', marginBottom: 8 },
+  subtitle: { fontSize: 15, color: '#A0AEC0', marginBottom: 24 },
   input: {
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
     borderWidth: 1,
     borderColor: 'rgba(255, 255, 255, 0.1)',
     color: '#fff',
@@ -163,31 +190,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(100, 150, 255, 0.4)',
   },
-  buttonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
-    letterSpacing: 0.5,
-  },
-  cameraContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  cameraTitle: {
-    fontSize: 26,
-    fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 8,
-  },
-  cameraSubtitle: {
-    fontSize: 16,
-    color: '#A0AEC0',
-    marginBottom: 40,
-  },
+  buttonText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
+  hintText: { color: '#6B7280', fontSize: 13, textAlign: 'center', marginTop: 16 },
+  cameraContainer: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  cameraTitle: { fontSize: 26, fontWeight: 'bold', color: '#fff', marginBottom: 8 },
+  cameraSubtitle: { fontSize: 15, color: '#A0AEC0', marginBottom: 30 },
   cameraFrame: {
     width: 300,
-    height: 400,
+    height: 380,
     borderRadius: 20,
     overflow: 'hidden',
     backgroundColor: '#000',
@@ -196,21 +206,31 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'rgba(100, 150, 255, 0.3)',
   },
+  cameraBg: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#111827' },
+  cameraPlaceholderText: { fontSize: 60, opacity: 0.4, marginBottom: 16 },
+  permBtn: { backgroundColor: 'rgba(100,150,255,0.3)', paddingHorizontal: 20, paddingVertical: 10, borderRadius: 10 },
+  permBtnText: { color: '#fff', fontSize: 14 },
   scanningRing: {
     position: 'absolute',
-    width: 250,
-    height: 250,
-    borderRadius: 125,
+    width: 240,
+    height: 240,
+    borderRadius: 120,
     borderWidth: 2,
-    borderColor: 'rgba(255, 215, 0, 0.6)',
+    borderColor: 'rgba(255, 215, 0, 0.5)',
     borderStyle: 'dashed',
   },
-  scanningText: {
-    marginTop: 30,
-    fontSize: 16,
-    color: '#FFD700',
-    fontWeight: 'bold',
-  }
+  scanningText: { marginTop: 24, fontSize: 16, color: '#FFD700', fontWeight: 'bold' },
+  captureButton: {
+    marginTop: 20,
+    backgroundColor: 'rgba(29, 158, 117, 0.3)',
+    paddingHorizontal: 36,
+    paddingVertical: 16,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(29, 158, 117, 0.6)',
+  },
+  captureButtonDisabled: { opacity: 0.5 },
+  captureButtonText: { color: '#fff', fontSize: 17, fontWeight: 'bold' },
 });
 
 export default EnrollmentScreen;

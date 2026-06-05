@@ -1,0 +1,226 @@
+{
+  "buildFiles": [
+    "/Users/dhyanpatel/Downloads/FieldGuardAI/node_modules/@react-native-community/netinfo/android/build/generated/source/codegen/jni/CMakeLists.txt",
+    "/Users/dhyanpatel/Downloads/FieldGuardAI/node_modules/@shopify/react-native-skia/android/build/generated/source/codegen/jni/CMakeLists.txt",
+    "/Users/dhyanpatel/Downloads/FieldGuardAI/node_modules/react-native-mmkv/android/build/generated/source/codegen/jni/CMakeLists.txt",
+    "/Users/dhyanpatel/Downloads/FieldGuardAI/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt",
+    "/Users/dhyanpatel/Downloads/FieldGuardAI/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt",
+    "/Users/dhyanpatel/Downloads/FieldGuardAI/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt",
+    "/Users/dhyanpatel/Downloads/FieldGuardAI/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/dhyanpatel/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/.cxx/Debug/rk4p1ja4/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/dhyanpatel/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/.cxx/Debug/rk4p1ja4/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "appmodules::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "appmodules",
+      "output": "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/build/intermediates/cxx/Debug/rk4p1ja4/obj/arm64-v8a/libappmodules.so",
+      "runtimeFiles": [
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/fabricjni/libs/android.arm64-v8a/libfabricjni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_newarchdefaults/libs/android.arm64-v8a/libreact_newarchdefaults.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_cxxreactpackage/libs/android.arm64-v8a/libreact_cxxreactpackage.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/rrc_legacyviewmanagerinterop/libs/android.arm64-v8a/librrc_legacyviewmanagerinterop.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/runtimeexecutor/libs/android.arm64-v8a/libruntimeexecutor.so",
+        "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/build/intermediates/cxx/Debug/rk4p1ja4/obj/arm64-v8a/libreact_codegen_RNCNetInfoSpec.so",
+        "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/build/intermediates/cxx/Debug/rk4p1ja4/obj/arm64-v8a/libreact_codegen_rnskia.so",
+        "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/build/intermediates/cxx/Debug/rk4p1ja4/obj/arm64-v8a/libreact_codegen_reactnativemmkv.so",
+        "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/build/intermediates/cxx/Debug/rk4p1ja4/obj/arm64-v8a/libreact_codegen_rnreanimated.so",
+        "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/build/intermediates/cxx/Debug/rk4p1ja4/obj/arm64-v8a/libreact_codegen_safeareacontext.so",
+        "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/build/intermediates/cxx/Debug/rk4p1ja4/obj/arm64-v8a/libreact_codegen_rnscreens.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_imagemanager/libs/android.arm64-v8a/libreact_render_imagemanager.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/rrc_image/libs/android.arm64-v8a/librrc_image.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/85cc4120626eb1015f9177086ccacf97/transformed/fbjni-0.6.0/prefab/modules/fbjni/libs/android.arm64-v8a/libfbjni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/folly_runtime/libs/android.arm64-v8a/libfolly_runtime.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/glog/libs/android.arm64-v8a/libglog.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/jsi/libs/android.arm64-v8a/libjsi.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_codegen_rncore/libs/android.arm64-v8a/libreact_codegen_rncore.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_debug/libs/android.arm64-v8a/libreact_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_utils/libs/android.arm64-v8a/libreact_utils.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_nativemodule_core/libs/android.arm64-v8a/libreact_nativemodule_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_componentregistry/libs/android.arm64-v8a/libreact_render_componentregistry.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_core/libs/android.arm64-v8a/libreact_render_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_debug/libs/android.arm64-v8a/libreact_render_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_graphics/libs/android.arm64-v8a/libreact_render_graphics.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_mapbuffer/libs/android.arm64-v8a/libreact_render_mapbuffer.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/rrc_view/libs/android.arm64-v8a/librrc_view.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/turbomodulejsijni/libs/android.arm64-v8a/libturbomodulejsijni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/yoga/libs/android.arm64-v8a/libyoga.so"
+      ]
+    },
+    "react_codegen_RNCNetInfoSpec::@c36c96bfd5b5770618a5": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "react_codegen_RNCNetInfoSpec",
+      "output": "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/build/intermediates/cxx/Debug/rk4p1ja4/obj/arm64-v8a/libreact_codegen_RNCNetInfoSpec.so",
+      "runtimeFiles": [
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/85cc4120626eb1015f9177086ccacf97/transformed/fbjni-0.6.0/prefab/modules/fbjni/libs/android.arm64-v8a/libfbjni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/folly_runtime/libs/android.arm64-v8a/libfolly_runtime.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/glog/libs/android.arm64-v8a/libglog.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/jsi/libs/android.arm64-v8a/libjsi.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_codegen_rncore/libs/android.arm64-v8a/libreact_codegen_rncore.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_debug/libs/android.arm64-v8a/libreact_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_nativemodule_core/libs/android.arm64-v8a/libreact_nativemodule_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_componentregistry/libs/android.arm64-v8a/libreact_render_componentregistry.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_core/libs/android.arm64-v8a/libreact_render_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_debug/libs/android.arm64-v8a/libreact_render_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_graphics/libs/android.arm64-v8a/libreact_render_graphics.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_imagemanager/libs/android.arm64-v8a/libreact_render_imagemanager.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_mapbuffer/libs/android.arm64-v8a/libreact_render_mapbuffer.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_utils/libs/android.arm64-v8a/libreact_utils.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/rrc_image/libs/android.arm64-v8a/librrc_image.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/rrc_view/libs/android.arm64-v8a/librrc_view.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/turbomodulejsijni/libs/android.arm64-v8a/libturbomodulejsijni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/yoga/libs/android.arm64-v8a/libyoga.so"
+      ]
+    },
+    "react_codegen_reactnativemmkv::@53a90ad335aa3dba27a5": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "react_codegen_reactnativemmkv",
+      "output": "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/build/intermediates/cxx/Debug/rk4p1ja4/obj/arm64-v8a/libreact_codegen_reactnativemmkv.so",
+      "runtimeFiles": [
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/85cc4120626eb1015f9177086ccacf97/transformed/fbjni-0.6.0/prefab/modules/fbjni/libs/android.arm64-v8a/libfbjni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/folly_runtime/libs/android.arm64-v8a/libfolly_runtime.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/glog/libs/android.arm64-v8a/libglog.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/jsi/libs/android.arm64-v8a/libjsi.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_codegen_rncore/libs/android.arm64-v8a/libreact_codegen_rncore.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_debug/libs/android.arm64-v8a/libreact_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_nativemodule_core/libs/android.arm64-v8a/libreact_nativemodule_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_componentregistry/libs/android.arm64-v8a/libreact_render_componentregistry.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_core/libs/android.arm64-v8a/libreact_render_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_debug/libs/android.arm64-v8a/libreact_render_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_graphics/libs/android.arm64-v8a/libreact_render_graphics.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_imagemanager/libs/android.arm64-v8a/libreact_render_imagemanager.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_mapbuffer/libs/android.arm64-v8a/libreact_render_mapbuffer.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_utils/libs/android.arm64-v8a/libreact_utils.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/rrc_image/libs/android.arm64-v8a/librrc_image.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/rrc_view/libs/android.arm64-v8a/librrc_view.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/turbomodulejsijni/libs/android.arm64-v8a/libturbomodulejsijni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/yoga/libs/android.arm64-v8a/libyoga.so"
+      ]
+    },
+    "react_codegen_rnreanimated::@8afabad14bfffa3f8b9a": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "react_codegen_rnreanimated",
+      "output": "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/build/intermediates/cxx/Debug/rk4p1ja4/obj/arm64-v8a/libreact_codegen_rnreanimated.so",
+      "runtimeFiles": [
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/85cc4120626eb1015f9177086ccacf97/transformed/fbjni-0.6.0/prefab/modules/fbjni/libs/android.arm64-v8a/libfbjni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/folly_runtime/libs/android.arm64-v8a/libfolly_runtime.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/glog/libs/android.arm64-v8a/libglog.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/jsi/libs/android.arm64-v8a/libjsi.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_codegen_rncore/libs/android.arm64-v8a/libreact_codegen_rncore.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_debug/libs/android.arm64-v8a/libreact_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_nativemodule_core/libs/android.arm64-v8a/libreact_nativemodule_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_componentregistry/libs/android.arm64-v8a/libreact_render_componentregistry.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_core/libs/android.arm64-v8a/libreact_render_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_debug/libs/android.arm64-v8a/libreact_render_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_graphics/libs/android.arm64-v8a/libreact_render_graphics.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_imagemanager/libs/android.arm64-v8a/libreact_render_imagemanager.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_mapbuffer/libs/android.arm64-v8a/libreact_render_mapbuffer.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_utils/libs/android.arm64-v8a/libreact_utils.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/rrc_image/libs/android.arm64-v8a/librrc_image.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/rrc_view/libs/android.arm64-v8a/librrc_view.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/turbomodulejsijni/libs/android.arm64-v8a/libturbomodulejsijni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/yoga/libs/android.arm64-v8a/libyoga.so"
+      ]
+    },
+    "react_codegen_rnscreens::@25bcbd507e98d3a854ad": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "react_codegen_rnscreens",
+      "output": "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/build/intermediates/cxx/Debug/rk4p1ja4/obj/arm64-v8a/libreact_codegen_rnscreens.so",
+      "runtimeFiles": [
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/85cc4120626eb1015f9177086ccacf97/transformed/fbjni-0.6.0/prefab/modules/fbjni/libs/android.arm64-v8a/libfbjni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/folly_runtime/libs/android.arm64-v8a/libfolly_runtime.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/glog/libs/android.arm64-v8a/libglog.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/jsi/libs/android.arm64-v8a/libjsi.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_codegen_rncore/libs/android.arm64-v8a/libreact_codegen_rncore.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_debug/libs/android.arm64-v8a/libreact_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_nativemodule_core/libs/android.arm64-v8a/libreact_nativemodule_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_core/libs/android.arm64-v8a/libreact_render_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_debug/libs/android.arm64-v8a/libreact_render_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_graphics/libs/android.arm64-v8a/libreact_render_graphics.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_mapbuffer/libs/android.arm64-v8a/libreact_render_mapbuffer.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_componentregistry/libs/android.arm64-v8a/libreact_render_componentregistry.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_utils/libs/android.arm64-v8a/libreact_utils.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/rrc_view/libs/android.arm64-v8a/librrc_view.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/turbomodulejsijni/libs/android.arm64-v8a/libturbomodulejsijni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/yoga/libs/android.arm64-v8a/libyoga.so"
+      ]
+    },
+    "react_codegen_rnskia::@376d8504f62839611b97": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "react_codegen_rnskia",
+      "output": "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/build/intermediates/cxx/Debug/rk4p1ja4/obj/arm64-v8a/libreact_codegen_rnskia.so",
+      "runtimeFiles": [
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/85cc4120626eb1015f9177086ccacf97/transformed/fbjni-0.6.0/prefab/modules/fbjni/libs/android.arm64-v8a/libfbjni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/folly_runtime/libs/android.arm64-v8a/libfolly_runtime.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/glog/libs/android.arm64-v8a/libglog.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/jsi/libs/android.arm64-v8a/libjsi.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_codegen_rncore/libs/android.arm64-v8a/libreact_codegen_rncore.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_debug/libs/android.arm64-v8a/libreact_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_nativemodule_core/libs/android.arm64-v8a/libreact_nativemodule_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_componentregistry/libs/android.arm64-v8a/libreact_render_componentregistry.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_core/libs/android.arm64-v8a/libreact_render_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_debug/libs/android.arm64-v8a/libreact_render_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_graphics/libs/android.arm64-v8a/libreact_render_graphics.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_imagemanager/libs/android.arm64-v8a/libreact_render_imagemanager.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_mapbuffer/libs/android.arm64-v8a/libreact_render_mapbuffer.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_utils/libs/android.arm64-v8a/libreact_utils.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/rrc_image/libs/android.arm64-v8a/librrc_image.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/rrc_view/libs/android.arm64-v8a/librrc_view.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/turbomodulejsijni/libs/android.arm64-v8a/libturbomodulejsijni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/yoga/libs/android.arm64-v8a/libyoga.so"
+      ]
+    },
+    "react_codegen_safeareacontext::@7984cd80db47aa7b952a": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "react_codegen_safeareacontext",
+      "output": "/Users/dhyanpatel/Downloads/FieldGuardAI/android/app/build/intermediates/cxx/Debug/rk4p1ja4/obj/arm64-v8a/libreact_codegen_safeareacontext.so",
+      "runtimeFiles": [
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/85cc4120626eb1015f9177086ccacf97/transformed/fbjni-0.6.0/prefab/modules/fbjni/libs/android.arm64-v8a/libfbjni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/folly_runtime/libs/android.arm64-v8a/libfolly_runtime.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/glog/libs/android.arm64-v8a/libglog.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/jsi/libs/android.arm64-v8a/libjsi.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_codegen_rncore/libs/android.arm64-v8a/libreact_codegen_rncore.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_debug/libs/android.arm64-v8a/libreact_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_nativemodule_core/libs/android.arm64-v8a/libreact_nativemodule_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_core/libs/android.arm64-v8a/libreact_render_core.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_debug/libs/android.arm64-v8a/libreact_render_debug.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_graphics/libs/android.arm64-v8a/libreact_render_graphics.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_mapbuffer/libs/android.arm64-v8a/libreact_render_mapbuffer.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_render_componentregistry/libs/android.arm64-v8a/libreact_render_componentregistry.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/react_utils/libs/android.arm64-v8a/libreact_utils.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/rrc_view/libs/android.arm64-v8a/librrc_view.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/turbomodulejsijni/libs/android.arm64-v8a/libturbomodulejsijni.so",
+        "/Users/dhyanpatel/.gradle/caches/transforms-4/a5fadcdb3e08d56322f617afc770017c/transformed/react-android-0.74.1-debug/prefab/modules/yoga/libs/android.arm64-v8a/libyoga.so"
+      ]
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/dhyanpatel/Library/Android/sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/dhyanpatel/Library/Android/sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

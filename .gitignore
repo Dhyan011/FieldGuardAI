@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# React Native
+.buckconfig
+
+# Android
+android/app/build/
+android/build/
+android/.gradle/
+*.apk
+*.aab
+*.keystore
+!android/app/debug.keystore
+local.properties
+
+# iOS
+ios/Pods/
+ios/build/
+
+# Metro
+.metro-health-check*
+
+# Build artifacts
+*.hprof
+*.tflite
+
+# Env
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Assets placeholders
+assets/models/

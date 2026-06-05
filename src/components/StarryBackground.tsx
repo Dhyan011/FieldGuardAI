@@ -1,81 +1,103 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
-import {
-  Canvas,
-  Circle,
-  LinearGradient,
-  Rect,
-  vec,
-  useClock,
-} from '@shopify/react-native-skia';
-import { useDerivedValue, useSharedValue, withRepeat, withTiming, Easing } from 'react-native-reanimated';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withRepeat,
+  withTiming,
+  Easing,
+  withDelay,
+  interpolate,
+} from 'react-native-reanimated';
 
-// A simple Skia-based starry background with a dark navy gradient and slow-moving particles.
-const StarryBackground = ({ children, style }: { children?: React.ReactNode, style?: any }) => {
-  const clock = useClock();
-
-  // Create some static stars
-  const stars = Array.from({ length: 40 }).map((_, i) => ({
-    x: Math.random() * 400,
-    y: Math.random() * 900,
-    r: Math.random() * 2 + 0.5,
-    opacityOffset: Math.random() * Math.PI * 2,
-    speed: Math.random() * 0.002 + 0.001
-  }));
-
-  // Create subtle swirling particles for Van Gogh effect
-  const particles = Array.from({ length: 15 }).map((_, i) => ({
-    cx: Math.random() * 400,
-    cy: Math.random() * 900,
-    r: Math.random() * 80 + 40,
-    offset: Math.random() * Math.PI * 2,
-  }));
-
-  const pulse = useSharedValue(0);
+// Pure React Native + Reanimated starry background (no Skia dependency)
+const Star = ({ x, y, size, delay }: { x: number; y: number; size: number; delay: number }) => {
+  const opacity = useSharedValue(0.2);
 
   useEffect(() => {
-    pulse.value = withRepeat(
-      withTiming(1, { duration: 4000, easing: Easing.inOut(Easing.ease) }),
-      -1,
-      true
+    opacity.value = withDelay(
+      delay,
+      withRepeat(
+        withTiming(1, { duration: 2000 + Math.random() * 2000, easing: Easing.inOut(Easing.ease) }),
+        -1,
+        true
+      )
     );
   }, []);
 
+  const style = useAnimatedStyle(() => ({
+    position: 'absolute' as const,
+    left: x,
+    top: y,
+    width: size,
+    height: size,
+    borderRadius: size / 2,
+    backgroundColor: '#FFD700',
+    opacity: opacity.value,
+  }));
+
+  return <Animated.View style={style} />;
+};
+
+const GlowOrb = ({ x, y, size, color, delay }: { x: number; y: number; size: number; color: string; delay: number }) => {
+  const scale = useSharedValue(0.8);
+
+  useEffect(() => {
+    scale.value = withDelay(
+      delay,
+      withRepeat(
+        withTiming(1.2, { duration: 4000 + Math.random() * 3000, easing: Easing.inOut(Easing.ease) }),
+        -1,
+        true
+      )
+    );
+  }, []);
+
+  const style = useAnimatedStyle(() => ({
+    position: 'absolute' as const,
+    left: x - size / 2,
+    top: y - size / 2,
+    width: size,
+    height: size,
+    borderRadius: size / 2,
+    backgroundColor: color,
+    opacity: 0.06,
+    transform: [{ scale: scale.value }],
+  }));
+
+  return <Animated.View style={style} />;
+};
+
+// Pre-generate star and orb data
+const starData = Array.from({ length: 35 }).map((_, i) => ({
+  x: Math.floor(Math.random() * 400),
+  y: Math.floor(Math.random() * 900),
+  size: Math.floor(Math.random() * 3) + 1,
+  delay: Math.floor(Math.random() * 3000),
+}));
+
+const orbData = [
+  { x: 80, y: 200, size: 160, color: 'rgba(100, 150, 255, 1)', delay: 0 },
+  { x: 300, y: 400, size: 120, color: 'rgba(138, 100, 255, 1)', delay: 1000 },
+  { x: 200, y: 700, size: 180, color: 'rgba(100, 150, 255, 1)', delay: 2000 },
+  { x: 50, y: 500, size: 100, color: 'rgba(100, 200, 255, 1)', delay: 500 },
+  { x: 350, y: 150, size: 140, color: 'rgba(150, 100, 255, 1)', delay: 1500 },
+];
+
+const StarryBackground = ({ children, style }: { children?: React.ReactNode; style?: any }) => {
   return (
     <View style={[styles.container, style]}>
-      <Canvas style={StyleSheet.absoluteFill}>
-        {/* Deep Navy/Blue gradient background */}
-        <Rect x={0} y={0} width={1000} height={1000}>
-          <LinearGradient
-            start={vec(0, 0)}
-            end={vec(0, 1000)}
-            colors={['#0a0b1e', '#11183b', '#0a192f']}
-          />
-        </Rect>
+      {/* Glow orbs for Van Gogh swirl effect */}
+      {orbData.map((orb, i) => (
+        <GlowOrb key={`orb-${i}`} {...orb} />
+      ))}
 
-        {/* Swirling glow elements (Van Gogh vibe) */}
-        {particles.map((p, i) => (
-          <Circle
-            key={`glow-${i}`}
-            cx={p.cx}
-            cy={p.cy}
-            r={p.r}
-            color="rgba(100, 150, 255, 0.03)"
-            // Add a slight blur effect to make it look like a paint stroke
-          />
-        ))}
+      {/* Twinkling stars */}
+      {starData.map((star, i) => (
+        <Star key={`star-${i}`} {...star} />
+      ))}
 
-        {/* Stars */}
-        {stars.map((star, i) => (
-          <Circle
-            key={`star-${i}`}
-            cx={star.x}
-            cy={star.y}
-            r={star.r}
-            color="rgba(255, 223, 0, 0.6)" // Golden light accents
-          />
-        ))}
-      </Canvas>
+      {/* Content overlay */}
       {children}
     </View>
   );
